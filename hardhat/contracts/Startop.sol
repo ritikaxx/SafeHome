@@ -117,21 +117,16 @@ contract Startup {
 
     // Function to tip the owner of a pitch.
     function tipPitchOwner(uint _id) public payable {
-        require(_id > 0 && _id <= pitchCount); // Ensure a valid pitch ID.
-        Pitch storage _pitch = pitches[_id]; // Get the pitch by ID.
-        address payable _author = _pitch.author; // Get the author's address.
-        _author.transfer(msg.value); // Transfer the tip amount to the author.
-        _pitch.tipAmount += msg.value; // Update the tip amount for the pitch.
-        pitches[_id] = _pitch; // Update the pitch in the mapping.
-        emit PitchTipped(_id, _pitch.hash, _pitch.description, _pitch.tipAmount, _author);
-        // Emit an event to log the pitch tip.
-        NotificationPayload memory notificationPayload = NotificationPayload({
-            title: 'Your pitch was tipped!',
-            body: 'User tipped your pitch with the ID ' + uintToString(_id) + '.'
-        });
-        sendNotification(_pitch.author, notificationPayload);
-        // Send a push notification to the author.
-    }
+    require(_id > 0 && _id <= pitchCount); // Ensure a valid pitch ID.
+    Pitch storage _pitch = pitches[_id]; // Get the pitch by ID.
+    address payable _author = _pitch.author; // Get the author's address.
+    _author.transfer(msg.value); // Transfer the tip amount to the author.
+    _pitch.tipAmount += msg.value; // Update the tip amount for the pitch.
+    pitches[_id] = _pitch; // Update the pitch in the mapping.
+    emit PitchTipped(_id, _pitch.media, _pitch.description, _pitch.tipAmount, _author);
+    // Emit an event to log the pitch tip.
+}
+
 
     // Function to register a user.
     function registerUser(string memory _username) public {
