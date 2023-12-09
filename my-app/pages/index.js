@@ -91,6 +91,7 @@ export default function Home() {
       setFile("");
       await txn.wait();
       setLoading(false);
+      
     } catch (error) {
       console.log(error);
     }
@@ -173,7 +174,7 @@ export default function Home() {
 
             </div>
             <div>
-              <label className="text-[#ffffff] mt-10">Upload Image</label>
+              <label className="text-[#ffffff] mt-10 ">Upload Image</label>
               <div
                 className="border-2 w-64 border-gray-600  border-dashed rounded-md mt-2 p-2  h-36 items-center justify-center flex"
                 onClick={() => {
