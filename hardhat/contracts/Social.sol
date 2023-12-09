@@ -1,4 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
+
 pragma solidity >=0.7.0 <0.9.0;
 
 contract Social {
@@ -16,7 +17,6 @@ contract Social {
         string postTxt;
         string postImg;
         uint256 tipAmount;
-        uint256 likes; // New field for storing the number of likes
     }
 
     event postCreated(
@@ -25,14 +25,6 @@ contract Social {
         string postTxt,
         string postImg,
         uint256 tipAmount
-    );
-
-    event PostTipped(
-        uint256 id,
-        string hash,
-        uint256 tipAmount,
-        uint256 likes, // Include the number of likes in the event
-        address payable author
     );
 
     mapping(uint256 => Post) posts;
@@ -77,12 +69,20 @@ contract Social {
         }
     }
 
-    // Function to tip a post and like it
-    function likePost(uint256 _id) public {
-        Post storage _post = posts[_id];
-        require(_post.author != msg.sender, "Cannot like your own post");
-        _post.likes += 1;
+    event PostTipped(
+        uint256 id,
+        string hash,
+        uint256 tipAmount,
+        address payable author
+    );
+
+    // Function to tip a post and buy coffee
+    function buyMeCoffee(uint256 _id) public payable {
+        Post memory _post = posts[_id];
+        require(_post.author != msg.sender, "Cannot pay your own post");
+        _post.author.transfer(msg.value);
+        _post.tipAmount += 1;
         posts[_id] = _post;
-        emit PostTipped(_id, _post.postTxt, _post.tipAmount, _post.likes, _post.author);
+        emit PostTipped(_id, _post.postTxt, _post.tipAmount, _post.author);
     }
 }

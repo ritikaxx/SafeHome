@@ -95,7 +95,7 @@ export const Card = ({ id, img, txt, author, tip }) => {
           className="p-1 w-24 items-center text-gray-50 text-sm bg-gradient-to-r from-indigo-900 to-violet-600 rounded-md shadow-lg"
           onClick={buyMeCoffee}
         >
-          Tip
+          Like
         </button>
         <button
           className="p-1 w-24 items-center text-gray-50 text-sm bg-gradient-to-r from-indigo-900 to-violet-600 rounded-md shadow-lg"

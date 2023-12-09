@@ -22,17 +22,18 @@ function Upload() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Write Something..."
-            className="w-[100%] text-white h-32 placeholder:text-gray-600  rounded-md mt-2 p-2 border  bg-[#1a1c1f] border-[#444752] focus:outline-none"
+            className="w-64 text-white h-36 placeholder:text-gray-600 rounded-md mt-8 p-8 border bg-[#1a1c1f] border-[#444752] focus:outline-none resize-none"
           />
         </div>
+
         <div>
-          <label className="text-[#9CA3AF]  mt-10">Image</label>
+          <label className="text-[#9CA3AF] mt-10">Image</label>
 
           <div
             onClick={() => {
               thumbnailRef.current.click();
             }}
-            className="border-2 w-64 border-gray-600  border-dashed rounded-md mt-2 p-2  h-36 items-center justify-center flex"
+            className="border-2 w-64 border-gray-600 border-dashed rounded-md mt-2 p-4 h-36 items-center justify-center flex"
           >
             {thumbnail ? (
               <img

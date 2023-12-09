@@ -54,14 +54,14 @@ function Layout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title ? title + " - Startup Space" : "Startup Space"}</title>
-        <meta name="description" content="Social Media" />
+        <title>{title ? title + " - Gated Society" : "Blockchain"}</title>
+        <meta name="description" content="My gated blockchain society" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="flex text-white bg-gradient-stars min-h-screen flex-col justify-between">
         <header>
-          <nav className="flex h-12 items-center px-4 bg-gradient-to-r from-black to-blue-900 justify-between shadow-md">
+          <nav className="flex h-12 items-center px-6 bg-gradient-to-r from-black to-blue-900 justify-between shadow-md">
             <Link href="/content">
               <span className="bg-clip-text text-3xl text-transparent bg-gradient-to-r from-violet-400 to-blue-500">
                 Gated Society
@@ -72,8 +72,12 @@ function Layout({ title, children }) {
                 <p>Post here</p>
               </Link>
 
-              <Link href="/content">
+              <Link href="/favourites">
                 <p>Favourites</p>
+              </Link>
+
+              <Link href="/services">
+                <p>Services</p>
               </Link>
 
               <Link href="/profile">
