@@ -1,0 +1,7 @@
+[rpc_endpoints]
+scroll = "https://rpc.scroll.io"
+scroll_sepolia = "https://sepolia-rpc.scroll.io"
+
+[etherscan]
+scroll = { key = "IMW4JD436TDAC9HD9ZEAFQR4P42VGTHGGY", chain=534352  }
+scroll_sepolia = { key = "IMW4JD436TDAC9HD9ZEAFQR4P42VGTHGGY", chain=534351 }
