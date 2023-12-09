@@ -91,7 +91,7 @@ export default function Home() {
       setFile("");
       await txn.wait();
       setLoading(false);
-      
+
     } catch (error) {
       console.log(error);
     }
@@ -138,24 +138,24 @@ export default function Home() {
   return (
     <>
       {!walletConnected ? (
-        <section className="relative bg-black flex flex-col h-screen justify-center items-center">
+        <section className="relative bg-white flex flex-col h-screen justify-center items-center">
           <p
-            className="text-xl text-gray-400 mb-8 p-5"
+            className="text-3xl text-gray-400 mb-8 p-5"
             data-aos="zoom-y-out"
             data-aos-delay="150"
           >
-            <span className="bg-clip-text text-3xl  text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
-              Startup Space{" "}
+            <span className="bg-clip-text text-5xl  text-transparent bg-gradient-to-r from-blue-500 to-teal-400">
+              Safe Home{" "}
             </span>
             <br/>
             <br></br>
-            An Ideation space for new upcoming developers of Blockchain.
+            A safe web3 space for all the residents, with managed and secured gated communities. 
           </p>
           <button
             onClick={connectWallet}
             className="items-center bg-gradient-to-r from-blue-500 to-teal-400 rounded-full font-medium p-4 shadow-lg"
           >
-            Connect Your Favourite Wallet
+            Add your Flat/Villa 
           </button>
         </section>
       ) : (
