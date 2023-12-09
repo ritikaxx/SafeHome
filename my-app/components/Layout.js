@@ -62,14 +62,14 @@ function Layout({ title, children }) {
       <div className="flex text-white bg-gradient-stars min-h-screen flex-col justify-between">
         <header>
           <nav className="flex h-12 items-center px-4 bg-gradient-to-r from-black to-blue-900 justify-between shadow-md">
-            <Link href="/">
+            <Link href="/content">
               <span className="bg-clip-text text-3xl text-transparent bg-gradient-to-r from-violet-400 to-blue-500">
-                Startup Space
+                Gated Society
               </span>
             </Link>
             <div className="flex items-center gap-5">
-              <Link href="/content">
-                <p>Community</p>
+              <Link href="/">
+                <p>Post here</p>
               </Link>
 
               <Link href="/content">
@@ -97,7 +97,7 @@ function Layout({ title, children }) {
         </header>
         <main className="container m-auto mt-4 px-4">{children}</main>
         <footer className="flex h-5 bg-black text-sm justify-center items-center shadow-inner">
-          Copyright ©{date.getFullYear()} Startup Space @Unfold 2023
+          Copyright ©{date.getFullYear()} Gated  @EthIndia 2023
         </footer>
       </div>
     </>
